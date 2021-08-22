@@ -17,7 +17,11 @@ git clone https://github.com/KamilKhairullin/devops.git
 ```
 pip3 install pdm==1.0.4
 ```
-3. In directory folder run 
+3. Go to app folder
+```
+cd app_python
+```
+3. In app_python folder run 
 ```
 pdm install
 ```
