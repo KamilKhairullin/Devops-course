@@ -37,7 +37,7 @@ localhost:5000
 ```
 ## Docker
 ### Build locally
-Run in app_python folder
+Run in /app_python folder
 ```
 docker build -t kamilkhairullin/devops_inno .
 ```
