@@ -39,7 +39,11 @@ localhost:5000
 ### Build locally
 Run in /app_python folder
 ```
-docker build -t kamilkhairullin/devops_inno .
+docker build -t devops_inno .
+```
+### Run using local build
+```
+docker run -p 5000:5000 devops_inno
 ```
 ### Download image from DockerHub
 ```
