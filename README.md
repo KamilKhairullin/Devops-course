@@ -13,15 +13,15 @@
 ```
 git clone https://github.com/KamilKhairullin/devops.git
 ```
-2. Run
-```
-pip3 install pdm==1.0.4
-```
-3. Go to app folder
+2. Go to app folder
 ```
 cd app_python
 ```
-3. In app_python folder run 
+3. Run
+```
+pip3 install pdm==1.0.4
+```
+4. In app_python folder run 
 ```
 pdm install
 ```
@@ -37,7 +37,7 @@ localhost:5000
 ```
 ## Docker
 ### Build locally
-Run in directory folder
+Run in app_python folder
 ```
 docker build -t kamilkhairullin/devops_inno .
 ```
