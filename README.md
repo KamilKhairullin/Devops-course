@@ -11,7 +11,7 @@
 ## Install
 1. Clone directory
 ```
-git clone ...
+git clone https://github.com/KamilKhairullin/devops.git
 ```
 2. Run
 ```
