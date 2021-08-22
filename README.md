@@ -1,5 +1,5 @@
 <h3 align="center">
-    DevOps Lab 1 & 2. Kamil Khairullin.
+    DevOps Lab 1 & 2 at Innopolis University. Kamil Khairullin.
 <h3>
 
 
