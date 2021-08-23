@@ -16,6 +16,7 @@ git clone https://github.com/KamilKhairullin/devops.git
 2. Go to app folder
 ```
 cd app_python
+cd myapp
 ```
 3. Run
 ```
