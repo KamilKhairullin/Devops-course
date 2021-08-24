@@ -7,11 +7,13 @@ WORKDIR /app
 RUN adduser -D app && chown -R app /app
 RUN mkdir /myapp-tmp-dir && chown -R app /myapp-tmp-dir
 
+USER app 
+
 COPY myapp/pyproject.toml .
 COPY myapp/pdm.lock .
 RUN pip3 install --no-cache-dir pdm==1.8.0 &&\ 
-    pdm install
+    python -m pdm install
 
 EXPOSE 5000
 COPY /myapp .
-CMD ["pdm", "run", "python3", "main.py"]
+CMD ["python", "-m", "pdm", "run", "python3", "main.py"]
