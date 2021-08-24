@@ -20,7 +20,7 @@ cd myapp
 ```
 3. Run
 ```
-pip3 install pdm==1.0.4
+pip3 install pdm==1.8.0
 ```
 4. In app_python folder run 
 ```
