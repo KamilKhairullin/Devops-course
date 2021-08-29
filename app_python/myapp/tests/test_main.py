@@ -1,12 +1,26 @@
-from datetime import datetime, timedelta, timezone
 
+import requests
 import pytest
+import unittest
+
+@pytest.fixture
+def client():
+    pass
+
+def test_acess(client):
+    r = requests.get("http://127.0.0.1:5000")
+    assert r.status_code == 200, "Unreached."
 
 
-@pytest.fixture()
-def test_format():
-    format = "%H:%M:%S"
-    timezone_offset = 3.0  # Moscow Standard Time (UTC+03:00)
-    tzinfo = timezone(timedelta(hours=timezone_offset))
-    time = datetime.now(tzinfo)
-    return datetime.datetime.strftime(time, format)
+# class FlaskrTestCase(unittest.TestCase):
+#     def setUp(self):
+#         pass
+#     def tearDown(self):
+#         pass
+
+#     def request_test(self):
+#         #r = requests.get("http://127.0.0.1:5000")
+#         assert False#r.status_code == 200, "Unreached."
+
+# #if __name__ == '__main__':
+# unittest.main()
