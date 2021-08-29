@@ -54,3 +54,9 @@ docker pull kamilkhairullin/devops_inno:latest
 ```
 docker run -p 5000:5000 kamilkhairullin/devops_inno:latest
 ```
+
+## Unit testing
+To run unit tests go to tests folder and run
+```
+pdm run pytest
+```
