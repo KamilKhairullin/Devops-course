@@ -41,7 +41,6 @@ jobs:
 
     - name: Install dependencies
       run: python3.9.1 -m pdm install -v 
-      run: python3.9 -m pdm install
         
     - name: run formatting tools
       run: |
