@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9.1]
+        python-version: [3.9]
 
     defaults:
           run:
@@ -33,14 +33,14 @@ jobs:
     - name: Install pdm
       uses: pdm-project/setup-pdm@v2.1
       with:
-        python-version: 3.9.1  # Version range or exact version of a Python version to use, the same as actions/setup-python
+        python-version: ${{matrix.python-version}}  # Version range or exact version of a Python version to use, the same as actions/setup-python
         architecture: x64    # The target architecture (x86, x64) of the Python interpreter. the same as actions/setup-python
         version: 1.4.0       # The version of PDM to install. Leave it as empty to use the latest version from PyPI
         prerelease: true     # Allow prerelease versions to be installed
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: python3.9.1 -m pdm install -v 
+      run: python3.9 -m pdm install -v 
         
     - name: run formatting tools
       run: |
