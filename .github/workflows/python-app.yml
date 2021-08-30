@@ -37,7 +37,7 @@ jobs:
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: python3.9 -m pdm install -v 
+      run: python3.9.6 -m pdm install -v 
        
         
     - name: run formatting tools
