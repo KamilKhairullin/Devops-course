@@ -12,6 +12,10 @@ jobs:
   check_code:
     runs-on: ubuntu-latest
 
+    defaults:
+          run:
+            working-directory: ${{ env.APP_PATH }}
+            
     steps:
     - name: Checkout Github repository
       uses: actions/checkout@v2
