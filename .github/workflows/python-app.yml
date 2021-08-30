@@ -35,9 +35,7 @@ jobs:
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: |
-        pdm remove resolvelib
-        pdm install -v
+      run: pdm install -v
         
     - name: run formatting tools
       run: |
