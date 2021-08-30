@@ -35,13 +35,13 @@ jobs:
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: pdm install -v
+      run: sudo pdm install -v
         
     - name: run formatting tools
       run: |
-        pdm run black main.py
-        pdm run darglint main.py
-        pdm run isort main.py
+        sudo pdm run black main.py
+        sudo pdm run darglint main.py
+        sudo pdm run isort main.py
 
       
   # build:
