@@ -37,7 +37,7 @@ jobs:
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: pdm install -v --no-interaction --no-root
+      run: pdm install -v 
        
         
     - name: run formatting tools
