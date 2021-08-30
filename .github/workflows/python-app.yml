@@ -6,6 +6,8 @@ name: Python application
 on:
   push
 
+env: 
+  APP_PATH: ./app_python/myapp
 jobs:
   check_code:
     runs-on: ubuntu-latest
