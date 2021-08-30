@@ -37,10 +37,7 @@ jobs:
         enable-pep582: true  # Enable PEP 582 package loading globally
 
     - name: Install dependencies
-      run: pdm install -v
-      with:
-        python-version: 3.9.6  # Version range or exact version of a Python version to use, the same as actions/setup-python
-        architecture: x64    # The target architecture (x86, x64) of the Python interpreter. the same as actions/setup-python
+      run: pdm install -v --no-interaction --no-root
        
         
     - name: run formatting tools
