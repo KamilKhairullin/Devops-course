@@ -41,11 +41,11 @@ jobs:
     - name: Install dependencies
       run: pdm install -v 
         
-    # - name: run formatting tools
-    #   run: |
-    #    pdm run black main.py
-    #    pdm run darglint main.py
-    #    pdm run isort main.py
+    - name: run formatting tools
+      run: |
+       pdm run black main.py
+       pdm run darglint main.py
+       pdm run isort main.py
 
     - name: run linters
       run: pdm run pylint main.py
