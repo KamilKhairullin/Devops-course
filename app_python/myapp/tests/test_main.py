@@ -1,11 +1,14 @@
 import requests
 import pytest
-import unittest
+from flask.testing import FlaskClient
+from main import app
 
-@pytest.fixture
-def client():
-    pass
+app.testing = True
+client = app.test_client()
 
-def test_acess(client):
-    r = requests.get("http://127.0.0.1:5000")
-    assert r.status_code == 200, "Unreached."
+# @pytest.fixture
+# def client():
+#     pass
+
+def test_acess():
+    assert client.get("http://127.0.0.1:5000"), "Unreached."
