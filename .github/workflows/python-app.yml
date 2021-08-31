@@ -51,7 +51,7 @@ jobs:
       run: pdm run pylint main.py
 
     - name: run tests
-      run: pdm run python -m tests/pytest
+      run: pdm run python -m pytest tests
 
       
   # build:
