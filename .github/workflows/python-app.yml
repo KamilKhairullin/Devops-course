@@ -50,8 +50,8 @@ jobs:
     - name: run linters
       run: pdm run pylint main.py
 
-    # - name: run tests
-    #   run: pdm run python -m pytest
+    - name: run tests
+      run: pdm run python -m tests/pytest
 
       
   # build:
