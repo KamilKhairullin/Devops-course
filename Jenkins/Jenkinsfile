@@ -7,7 +7,7 @@ pipeline {
         DOCKER_PATH = 'app_python'
         CODE = 'main.py'
         TESTS = 'tests'
-        registry = "kamilkhairullin/devops_inno" 
+        registry = "kamilkhairullin/devops_inno:latest" 
         registryCredential = 'DOCKERHUB.ID' 
         dockerImage = '' 
     }
@@ -58,7 +58,7 @@ pipeline {
             steps{
                 dir("${DOCKER_PATH}") {
                     script {
-                        dockerImage = docker.build registry + ":jenkins-$BUILD_NUMBER"
+                        dockerImage = docker.build registry
                     }
                 }
             }
