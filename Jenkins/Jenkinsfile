@@ -1,6 +1,5 @@
 pipeline {
 
-
     environment {
         PDM_VERSION = '1.8.0'
         APP_PATH = 'app_python/myapp'
