@@ -4,6 +4,7 @@ pipeline {
     environment {
         PDM_VERSION = '1.8.0'
         APP_PATH = 'app_python/myapp'
+        DOCKER_PATH = 'app_python'
         CODE = 'main.py'
         TESTS = 'tests'
         registry = "kamilkhairullin/devops_inno" 
@@ -55,7 +56,7 @@ pipeline {
         }
         stage('Build docker image') {
             steps{
-                dir("${APP_PATH}") {
+                dir("${DOCKER_PATH}") {
                     script {
                         dockerImage = docker.build registry + ":jenkins-$BUILD_NUMBER"
                     }
