@@ -11,6 +11,32 @@ terraform plan
 ```
 terraform apply
 ```
+
+- On macOS Big Sur 11.3 I have following error:
+
+```
+│ Error: [ERROR] Setup VM properties: exit status 1
+│ 
+│   with virtualbox_vm.node[1],
+│   on config.tf line 10, in resource "virtualbox_vm" "node":
+│   10: resource "virtualbox_vm" "node" {
+│ 
+╵
+╷
+│ Error: [ERROR] Setup VM properties: exit status 1
+│ 
+│   with virtualbox_vm.node[0],
+│   on config.tf line 10, in resource "virtualbox_vm" "node":
+│   10: resource "virtualbox_vm" "node" {
+│ 
+╵
+```
+
+and destroy using 
+
+```
+terraform destroy
+```
 # Terraform best practices 
 
 1. Don’t commit the .tfstate file
