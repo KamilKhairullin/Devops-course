@@ -1,5 +1,5 @@
-pipeline {
 
+pipeline {
     environment {
         PDM_VERSION = '1.8.0'
         APP_PATH = 'app_python/myapp'
@@ -17,6 +17,11 @@ pipeline {
         }
     }
     stages {
+        stage('Clean') {
+            steps {
+                cleanup { cleanWs() }
+            }
+        }
         stage('Checkout') {
             steps {
                 checkout scm
@@ -72,5 +77,8 @@ pipeline {
                 }
             }
         }
+    }
+    post {
+        cleanup { cleanWs() }
     }
 }
