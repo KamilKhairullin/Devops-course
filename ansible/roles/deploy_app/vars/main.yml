@@ -1,0 +1,7 @@
+---
+# vars file for deploy_app
+
+remote_app_path: /opt/deploy_app
+docker_image_name: kamilkhairullin/devops_inno
+docker_image_version: latest
+docker_compose_name: docker-compose.yml
