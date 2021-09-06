@@ -1,0 +1,5 @@
+[aws_server]
+aws ansible_host=ec2-18-222-172-91.us-east-2.compute.amazonaws.com ansible_user=ubuntu ansible_ssh_private_key_file=./DevOpsKey2.pem
+
+[controller]
+control ansible_connection=local
