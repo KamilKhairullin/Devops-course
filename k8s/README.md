@@ -49,3 +49,24 @@ kubectl apply -f service.yml
 ```
 minikube service myapp-service
 ```
+
+
+# Lab 10
+
+## HELM
+
+1. Create chart
+```
+helm create my-app 
+```
+
+2. Install app
+```
+helm package my-app
+```
+```
+helm install my-app ./my-app-0.1.0.tgz
+```
+```
+minikube service my-app
+```
