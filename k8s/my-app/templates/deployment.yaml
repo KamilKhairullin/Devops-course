@@ -40,6 +40,7 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.secret.name }}
                   key: username
+
           ports:
             - name: http
               containerPort: 5000
@@ -54,6 +55,17 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+
+          volumeMounts:
+            - name: json-mount
+              mountPath: config.json
+              subPath: config.json
+
+      volumes:
+        - name: json-mount
+          configMap: 
+            name: {{ .Values.configmap.name }}
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

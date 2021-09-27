@@ -14,6 +14,9 @@ secret:
   name: username
   username: mysecretusername
 
+configmap:
+    name: cfmap
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
