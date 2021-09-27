@@ -10,6 +10,10 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
+secret:
+  name: username
+  username: mysecretusername
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -67,7 +71,13 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
+resources:
+  requests:
+    cpu: ".2"
+    memory: "100Mi"
+  limits:
+    cpu: ".5"
+    memory: "256Mi"
 autoscaling:
   enabled: false
   minReplicas: 1
