@@ -4,7 +4,7 @@ FROM python:3.8-alpine
 RUN apk add build-base 
 WORKDIR /app
 
-RUN adduser -D app && chown -R app /app
+RUN adduser -D app sudo && chown -R app /app
 RUN mkdir /myapp-tmp-dir && chown -R app /myapp-tmp-dir
 
 USER app 

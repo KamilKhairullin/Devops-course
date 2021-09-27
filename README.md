@@ -7,7 +7,15 @@
 # Quick start
 
 ## Overview 
- Web application written in Flask and showing the current time in Moscow
+ Web application written in Flask and showing the current time in Moscow.
+ Visit to access current time
+ ```
+ localhost:5000/
+ ```
+Visit to show all visitors and time of their visit.
+```
+localhost:5000/visits
+```
 ## Install
 1. Clone directory
 ```
