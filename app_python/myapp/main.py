@@ -34,7 +34,7 @@ def visits():
     Returns:
         int: number of times was accessed
     """
-    ans = ""
+    ans = "Visitors: "
     for visitor in visitors:
         ans = ans + str(visitor) + " \n"
     return ans

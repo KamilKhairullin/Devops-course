@@ -1,11 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "my-app.fullname" . }}
-  labels:
-    {{- include "my-app.labels" . | nindent 4 }}
+  labels: {{- include "my-app.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
+  serviceName: {{ include "my-app.fullname" . }}
+  podManagementPolicy: {{ .Values.statefulSetConfig.podManagementPolicy }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
@@ -58,13 +59,12 @@ spec:
 
           volumeMounts:
             - name: json-mount
-              mountPath: config.json
-              subPath: config.json
+              mountPath: {{ .Values.volumeMount.path }}
 
-      volumes:
-        - name: json-mount
-          configMap: 
-            name: {{ .Values.configmap.name }}
+      # volumes:
+      #   - name: json-mount
+      #     configMap: 
+      #       name: {{ .Values.configmap.name }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
@@ -78,3 +78,9 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
+  volumeClaimTemplates:
+    - metadata:
+        name: json-mount
+      spec:
+        {{ .Values.statefulSetConfig.specTemplate.spec}}
