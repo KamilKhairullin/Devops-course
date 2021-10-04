@@ -5,8 +5,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-visitors = deque([])
-
 @app.route("/")
 def time():
     """
@@ -19,10 +17,15 @@ def time():
     timezone_offset = 3.0  # Moscow Standard Time (UTC+03:00)
     tzinfo = timezone(timedelta(hours=timezone_offset))
     cur_time = datetime.now(tzinfo).strftime("%H:%M:%S")
-    visitors.append(str(cur_time))
-    if len(visitors) > 10:
-        visitors.popleft()
-    
+
+    visits = []
+    with open("visits.txt", "r", encoding="utf-8") as file:
+            visits = file.readlines()
+    visits = visits[:100]
+    visits.insert(0, str(cur_time)+' ')
+    with open("visits.txt", "w", encoding="utf-8") as file:
+        file.writelines(visits)
+      
     return render_template(
         "index.html", datetime=cur_time
     )
@@ -34,11 +37,11 @@ def visits():
     Returns:
         int: number of times was accessed
     """
-    print(visitors)
-    ans = "Visitors: "
-    for visitor in visitors:
-        ans = ans + str(visitor) + "\n"
-    return ans
+    visits = []
+    with open("visits.txt", "r", encoding="utf-8") as file:
+        visits = file.readlines()
+
+    return str(visits)
 
 
 if __name__ == "__main__":

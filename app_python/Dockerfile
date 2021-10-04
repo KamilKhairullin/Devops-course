@@ -4,10 +4,10 @@ FROM python:3.8-alpine
 RUN apk add build-base 
 WORKDIR /app
 
-RUN adduser -D app sudo && chown -R app /app
+RUN adduser --disabled-password app && chown -R app /app
 RUN mkdir /myapp-tmp-dir && chown -R app /myapp-tmp-dir
 
-USER app 
+#USER app 
 
 COPY myapp/pyproject.toml .
 COPY myapp/pdm.lock .
