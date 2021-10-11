@@ -28,6 +28,7 @@ statefulSetConfig:
 volumeMount:
   name: json-mount
   path: config.json
+  wget: /wget
 
 imagePullSecrets: []
 nameOverride: ""

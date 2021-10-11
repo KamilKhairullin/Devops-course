@@ -28,6 +28,19 @@ spec:
       serviceAccountName: {{ include "my-app.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+
+      initContainers:
+        - name: install
+          image: busybox
+          command:
+            - wget
+            - "-O"
+            - "/wget/test.html"
+            - http://info.cern.ch
+          volumeMounts:
+            - name: wget
+              mountPath: "/wget"
+
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -60,11 +73,11 @@ spec:
           volumeMounts:
             - name: json-mount
               mountPath: {{ .Values.volumeMount.path }}
-
-      # volumes:
-      #   - name: json-mount
-      #     configMap: 
-      #       name: {{ .Values.configmap.name }}
+            - name: wget
+              mountPath: {{ .Values.volumeMount.wget }}
+      volumes:
+        - name: wget
+          emptyDir: {}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
