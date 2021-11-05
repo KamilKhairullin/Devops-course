@@ -1,5 +1,5 @@
 <h3 align="center">
-    DevOps Lab 1 & 2 at Innopolis University. Kamil Khairullin.
+    DevOps course at Innopolis University. Kamil Khairullin.
 <h3>
 
 
@@ -7,7 +7,7 @@
 # Quick start
 
 ## Overview 
- Web application written in Flask and showing the current time in Moscow.
+ Web application written in Flask and showing the current Moscow time.
  Visit to access current time
  ```
  localhost:5000/
