@@ -85,9 +85,6 @@ kubectl apply -f service.yml
 minikube service myapp-service
 ```
 
-
-# Lab 10
-
 ## HELM
 
 1. Create chart
